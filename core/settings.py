@@ -142,7 +142,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_RESULT_BACKEND = 'django-db'
-CELERY_ACCEPT_CONTENT = ['application/json', 'application/x-python-serialize']
-CELERY_RESULT_SERIALIZER = 'pickle'
-CELERY_TASK = 'pickle'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK = 'json'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_RESULT_EXTENDED = True
 

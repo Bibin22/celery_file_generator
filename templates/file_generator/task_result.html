@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <table class="table table-striped">
+   <thead>
+     <tr>
+       <th scope="col">#</th>
+       <th scope="col">CSV Name</th>
+       <th scope="col">Rows Count</th>
+       <th scope="col">Task ID</th>
+       <th scope="col">Status</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for data in task_list %}
+     <tr>
+       <th>{{ forloop.counter }}</th>
+       <td>{{ data.filename }}</td>
+       <td>{{ data.data_count }}</td>
+       <td>{{ data.celery_task_id }}</td>
+       <td>{{ data.status.status }}</td>
+     </tr>
+   {% endfor %}
+   </tbody>
+ </table>
+<hr>
+
+
+{% endblock %}
+ 
